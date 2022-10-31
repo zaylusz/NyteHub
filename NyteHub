@@ -1,0 +1,254 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "NyteHub", HidePremium = true, IntroText = "NyteHub", SaveConfig = false, ConfigFolder = "OrionTest"})
+
+
+setclipboard("https://www.roblox.com/groups/13964681/dahood-star-group#!/about")
+
+local Player = game:GetService("Players").LocalPlayer
+local ID = 13964681
+if (not Player:IsInGroup(ID)) then
+    game.Players.LocalPlayer:Kick("Hey, dont worry your not banned! its just a kick from the server. Our Mods noticed that your not in our group, The group link has been copyed! Error: Group")
+end
+
+OrionLib:MakeNotification({
+	Name = "NyteHub!",
+	Content = "Hey, Thanks for Executing NyteHub we appreiate it. Also this script was made a few days ago so it wont be the best Thanks v1",
+	Image = "rbxassetid://4483345998",
+	Time = 20
+})
+
+game:GetService("ReplicatedStorage").MainEvent:FireServer("LeaveCrew")
+
+game:GetService("ReplicatedStorage").MainEvent:FireServer("JoinCrew","13964681")
+
+print("<--- Nytehub injected Time")
+
+
+--Values
+_G.FlyC = true
+_G.BatReach = true
+_G.KnifeReach = true
+_G.AntiLock = true 
+_G.FistReach = true
+
+
+
+
+
+--Functions
+function FlyC()
+    while _G.FlyC == true do
+
+        loadstring(game:HttpGet("https://pastebin.com/raw/kiyLthrB"))()
+    end
+end
+
+function AntiLock()
+    while _G.AntiLock == true do
+        loadstring(game:HttpGet('https://pastebin.com/raw/8d2eJzmg'))()
+    end
+end
+
+
+
+
+function BatReach()
+    while _G.BatReach == true do
+    game.Players.LocalPlayer.Backpack["[Bat]"].Handle.Size = Vector3.new(100, 100, 100)
+    end
+end
+
+function FistReach()
+    while _G.FistReach == true do
+        loadstring(game:HttpGet(('https://pastebin.com/raw/uUk8VmBF'),true))()
+    end
+end
+
+function KnifeReach()
+    while _G.KnifeReach == true do 
+        game.Players.LocalPlayer.Backpack["[Bat]"].Handle.Size = Vector3.new(100, 100, 100)
+    end
+end
+
+--Tabs
+local MainTab = Window:MakeTab({
+	Name = "MainStuff",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local SideTab = Window:MakeTab({
+	Name = "SideStuff",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local AimLockTab = Window:MakeTab({
+	Name = "AimLock Tab",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+--toggles
+
+MainTab:AddToggle({
+	Name = "Fly!",
+	Default = false,
+	Callback = function(Value)
+		_G.FlyC =Value
+        FlyC()
+	end    
+})
+
+MainTab:AddToggle({
+	Name = "Bat Reach",
+	Default = false,
+	Callback = function(Value)
+		_G.BatReach = Value
+        BatReach()
+	end    
+})
+
+MainTab:AddToggle({
+	Name = "Knife Reach",
+	Default = false,
+	Callback = function(Value)
+		_G.KnifeReach = Value
+        KnifeReach()
+	end    
+})
+
+
+MainTab:AddToggle({
+	Name = "AntiLock",
+	Default = false,
+	Callback = function(Value)
+		_G.AntiLock = Value
+        AntiLock()
+	end    
+})
+
+
+MainTab:AddToggle({
+	Name = "FistReach laggy do not reccomend",
+	Default = false,
+	Callback = function(Value)
+		_G.FistReach = Value
+        FistReach()
+	end    
+})
+
+MainTab:AddButton({
+	Name = "Headless",
+	Callback = function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/CcP2EA7S", true))()
+  	end    
+})
+
+
+AimLockTab:AddButton({
+	Name = "ESP",
+	Callback = function()
+        loadstring(game:HttpGet('https://pastebin.com/raw/Fa0MZ2gc'))()
+  	end    
+})
+
+
+AimLockTab:AddButton({
+	Name = "AimLock (hold right click)",
+	Callback = function()
+        loadstring(game:HttpGet('https://pastebin.com/raw/gY0WjYNj'))()
+  	end    
+})
+
+
+SideTab:AddButton({
+	Name = "Translator",
+	Callback = function()
+        
+        OrionLib:MakeNotification({
+            Name = "NyteHub!",
+            Content = "Translator enabled This will Translate any text for you",
+            Image = "rbxassetid://4483345998",
+            Time = 5
+        })
+        
+        loadstring(game:HttpGetAsync('https://i.qts.life/r/ChatInlineTranslator.lua', true))()
+  	end    
+})
+
+SideTab:AddButton({
+	Name = "Negative money",
+	Callback = function()
+        _G.Cash = "$-999,999,999" --make sure to add the "," and the "$" at the front or it wont work. EX : $9,000
+
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.MoneyText.Text = _G.Cash
+        game:GetService("Players").LocalPlayer.Backpack.Wallet.Handle.BillboardGui.TextLabel.Text = _G.Cash
+        game:GetService("Players").LocalPlayer.Backpack.Wallet.Handle.BillboardGui.TextLabel.Value = _G.Cash
+  	end    
+})
+
+SideTab:AddButton({
+	Name = "More money",
+	Callback = function()
+        _G.Cash = "$999,999,999" --make sure to add the "," and the "$" at the front or it wont work. EX : $9,000
+
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.MoneyText.Text = _G.Cash
+        game:GetService("Players").LocalPlayer.Backpack.Wallet.Handle.BillboardGui.TextLabel.Text = _G.Cash
+        game:GetService("Players").LocalPlayer.Backpack.Wallet.Handle.BillboardGui.TextLabel.Value = _G.Cash
+  	end    
+})
+
+
+SideTab:AddButton({
+	Name = "Inf Money",
+	Callback = function()
+        _G.Cash = "$INFINITE" --make sure to add the "," and the "$" at the front or it wont work. EX : $9,000
+
+        game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.MoneyText.Text = _G.Cash
+        game:GetService("Players").LocalPlayer.Backpack.Wallet.Handle.BillboardGui.TextLabel.Text = _G.Cash
+        game:GetService("Players").LocalPlayer.Backpack.Wallet.Handle.BillboardGui.TextLabel.Value = _G.Cash
+  	end    
+})
+
+SideTab:AddButton({
+	Name = "AFK",
+	Callback = function()
+        local player = game.Players.LocalPlayer.Character
+
+player.Humanoid.HipHeight = 400
+player.Humanoid.JumpPower = 100
+player.Humanoid.WalkSpeed = 100
+
+  	end    
+})
+
+
+SideTab:AddButton({
+	Name = "Hover",
+	Callback = function()
+        local player = game.Players.LocalPlayer.Character
+
+player.Humanoid.HipHeight = 10
+player.Humanoid.JumpPower = 100
+player.Humanoid.WalkSpeed = 100
+
+  	end    
+})
+
+
+SideTab:AddButton({
+	Name = "Normal",
+	Callback = function()
+        local player = game.Players.LocalPlayer.Character
+
+player.Humanoid.HipHeight = 2
+player.Humanoid.JumpPower = 100
+player.Humanoid.WalkSpeed = 100
+
+  	end    
+})
+
+
+
+OrionLib:Init()
